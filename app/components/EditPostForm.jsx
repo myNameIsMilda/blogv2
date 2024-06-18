@@ -1,4 +1,11 @@
-export default function editPostForm() {
+'use client';
+import {useState} from "react";
+
+export default function editPostForm({id, title, content}) {
+
+    const [newTitle, setNewTitle] = useState(title);
+    const [newContent, setNewContent] = useState(content);
+
     return (
         <form className="flex flex-col gap-3">
             <input className="border border-slate-500 px-8 py-2 text-black"
