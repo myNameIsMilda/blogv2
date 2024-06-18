@@ -11,8 +11,13 @@ export async function PUT(request, { params }){
 }
 
 export async function GET(request, { params }){
-    const { id } = params;
-    await connectMongoDb();
-    const tweet = await Tweet.find({ _id: id });
-    return NextResponse.json({ tweet }, { status: 200 });
+    try {
+        const { id } = params;
+        await connectMongoDb();
+        const tweet = await Tweet.findOne({ _id: id });
+        return NextResponse.json({ tweet }, { status: 200 });
+    } catch (error) {
+        console.error("Error in GET method:", error);
+        throw error;
+    }
 }
