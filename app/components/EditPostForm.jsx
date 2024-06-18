@@ -48,7 +48,7 @@ export default function EditPostForm({ id, title, content }) {
             />
 
             <button className="bg-blue-500 hover:bg-blue-700 text-white px-6 py-3 w-fit mx-auto" type="submit">
-                Update Tweet
+                Update
             </button>
         </form>
     );
